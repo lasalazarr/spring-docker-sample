@@ -20,9 +20,15 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'com.palantir.docker'
 
 docker {
+    //copySpec.from("/build/libs").into("/tmp")
     name "${project.group}/${jar.baseName}"
     files jar.archivePath
-    buildArgs(['JAR_FILE': "${jar.archiveName}"])
+    dockerfile = file('Dockerfile')
+    buildArgs(['PATH': " . "])
+
+    //buildArgs(['JAR_FILE': "${jar.archiveName}"])
+    //path ${path}
+    //pull false
 }
 
 jar {
