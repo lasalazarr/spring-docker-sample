@@ -11,7 +11,7 @@ buildscript {
     }
 }
 
-group = 'springio'
+group = 'lasalazarr'
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
